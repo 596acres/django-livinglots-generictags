@@ -1,4 +1,4 @@
-django-inplace
+django-livinglots-generictags
 ==============
 
 A set of helpers for creating Django template tags for models with generic 
