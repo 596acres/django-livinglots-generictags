@@ -25,7 +25,7 @@ setup(
                  'models with generic relations.'),
     long_description=open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
     url='https://github.com/596acres/django-livinglots-generictags/',
-    license='GNU Lesser General Public License v3 (LGPLv3)',
+    license='GNU Affero General Public License v3 or later (AGPLv3+)',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
     install_requires=[
