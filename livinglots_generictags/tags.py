@@ -24,6 +24,8 @@ class RenderGenericRelationList(GenericRelationMixin, InclusionTag):
         Argument('target', required=True, resolve=True)
     )
 
+    template_dir_prefix = None
+
     # NB: unfortunately required
     template = ''
 
@@ -34,10 +36,14 @@ class RenderGenericRelationList(GenericRelationMixin, InclusionTag):
         return context
 
     def get_template(self, context, **kwargs):
-        return '%s/%s_list.html' % (
+        template = '%s/%s_list.html' % (
             self.model._meta.app_label,
             self.model._meta.object_name.lower(),
         )
+
+        if self.template_dir_prefix:
+            template = self.template_dir_prefix + '/' + template
+        return template
 
     def get_model_plural_name(self):
         return self.model._meta.object_name.lower() + 's'
